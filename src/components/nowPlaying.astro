@@ -1,0 +1,33 @@
+<div id="nowPlaying"></div>
+
+<script>
+    const nowPlaying = document.getElementById('nowPlaying');
+
+    async function updateNowPlaying() {
+   		const url =
+        	`https://ws.audioscrobbler.com/2.0/?` +
+         	new URLSearchParams({
+            	method: "user.getrecenttracks",
+             	user: "aliceowo_",
+              	api_key: "becf9a03a0f784eabec674e854b3e111", // github pages is for chud losers
+               	format: "json",
+                limit: "1",
+          	});
+
+        const response = await fetch(url);
+        const data = await response.json();
+
+        let track = data.recenttracks.track[0];
+
+        if (nowPlaying) {
+            nowPlaying.innerHTML = `now listening to:<br />
+            <a href="${track.url}">
+                <img src="${track.image[2]['#text']}" /> ${track.name} by ${track.artist['#text']}
+            </a>
+        `;
+        }
+    }
+
+    updateNowPlaying();
+    setInterval(updateNowPlaying, 90000);
+</script>

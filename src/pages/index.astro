@@ -1,0 +1,80 @@
+---
+import Layout from "../layouts/layout.astro";
+import Navbar from "../components/topbar.astro";
+import TypedName from "../components/typedName.astro";
+import NowPlaying from "../components/nowPlaying.astro";
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+
+<Layout>
+
+<Navbar />
+
+<TypedName />
+
+<div class="content">
+
+    <div class="left-column">
+        <span class="hello">
+            hi! i'm aurora!<br />
+            i like languages and league, not in that order
+        </span>
+
+        <iframe
+            width="620"
+            height="360"
+            src="https://medal.tv/games/league-of-legends/clip/l5KTtIRY7foQal-s6?invite=cr-MSxVejIsMjcwNzM4MjM1"
+            allow="autoplay"
+            allowfullscreen="false">
+        </iframe>
+    </div>
+
+    <div class="right-column">
+        <span style="justify-content: right; display:block; text-align: right;">
+            i also make <a href="https://soundcloud.com/borealis17" style="color: var(--pinkdark3)">music</a> and <a href="https://github.com/borealis17" style="color: var(--pinkdark3)">i code</a> sometimes!
+            i'm a big fan of all sorts of music, but my favorites are lofi and frenchcore (wild range, i know)
+        </span>
+        <ul class="right-bullets">
+            <li>
+                <ul class="flex-inline">
+                    <li><span class="fi fi-us fis"></span></li>
+                    <li><span class="fi fi-mx fis"></span></li>
+                    <li><span class="fi fi-jp fis"></span></li>
+                    <li><span class="fi fi-fr fis"></span>,</li>
+                    <li><span>learning</span></li>
+
+                    <li><span class="fi fi-pl fis"></span></li>
+
+                    <li>
+                        <span>and </span>
+                        <span class="fi fi-kr fis"></span>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <ul class="flex-inline">
+                    <li><img src="img/4 role.png" alt="" /></li>
+                    <li><img src="img/vayne.png" alt="" /></li>
+
+                    <li><img src="img/jungle.png" alt="" /></li>
+                    <li><img src="img/kayn.png" alt="" /></li>
+
+                    <li><img src="img/mid top.png" alt="" /></li>
+                    <li><img src="img/aurora.png" alt="" /></li>
+
+                    <li><img src="img/mid.png" alt="" /></li>
+                    <li><img src="img/ahri.png" alt="" /></li>
+
+                    <li><img src="img/mid bot.png" alt="" /></li>
+                    <li><img src="img/samira.png" alt="" /></li>
+                </ul>
+            </li>
+        </ul>
+        <NowPlaying />
+    </div>
+
+</div>
+
+</Layout>

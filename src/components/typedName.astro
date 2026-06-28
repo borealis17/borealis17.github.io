@@ -1,0 +1,24 @@
+---
+import "../styles/index.css";
+---
+
+<div class="nameanimation">
+    <span class="name"></span>
+</div>
+
+<script>
+import Typed from "typed.js";
+
+new Typed(".name", {
+    strings: [
+        "Aurora",
+        "borealis17",
+        "cfx6"
+    ],
+    typeSpeed: 100,
+    backSpeed: 75,
+    showCursor: true,
+    cursorChar: '|',
+    loop: true
+});
+</script>

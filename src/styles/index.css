@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap');
+
+:root {
+    --pinkdark3: #ca94ae;
+    --pinkdark2: #d8a0bb;
+    --pinkdark1: #e5adc8;
+    --pinknormal: #f3bad5;
+    --pinklight1: #ffc7e2;
+    --pinklight2: #ffd4f0;
+    --pinklight3: #ffe2fe;
+
+    --transblue: #5bcdfa69;
+    --transpink: #f5a9ba69;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    background: black;
+    font-family: 'Stack Sans Headline';
+    color: var(--pinknormal);
+}
+
+.page {
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--pinknormal);
+}
+
+/* ---------- TOP BAR ---------- */
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #4b3c43;
+    font-size: 18pt;
+    padding: 5px 10px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ---------- NAME ---------- */
+
+.nameanimation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #4b3c43;
+}
+
+.name {
+    font-size: 48pt;
+    color: white;
+
+    text-shadow:
+        0 0 25px var(--transblue),
+        0 0 25px var(--transpink);
+}
+
+.typed-cursor {
+    color: var(--pinkdark3);
+    font-size: 48pt;
+}
+
+/* ---------- CONTENT ---------- */
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 40px;
+
+    margin-top: 10px;
+    padding: 10px;
+
+    background: #4b3c43;
+}
+
+.left-column {
+    flex: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-column {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ---------- HOVER HEART ---------- */
+
+.topheart {
+    position: relative;
+    display: inline-block;
+
+    padding-left: 5px;
+
+    transition: color 0.3s;
+}
+
+.topheart:hover {
+    color: transparent;
+}
+
+.topheart::after {
+    content: '';
+
+    position: absolute;
+    left: 5px;
+    top: 0;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    background: linear-gradient(
+        90deg,
+        #5bcdfa,
+        #f5a9ba,
+        white,
+        #f5a9ba,
+        #5bcdfa
+    );
+
+    background-size: 300% 100%;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientShift 4s linear infinite;
+}
+
+.topheart:hover::after {
+    content: 'We deserve the sunlight ❤︎';
+    opacity: 1;
+}
+
+@keyframes gradientShift {
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 300%;
+    }
+}
+
+/* ---------- LISTS ---------- */
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.right-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-bullets > li {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.right-bullets > li::after {
+    content: '❤︎';
+    margin-left: 10px;
+}
+
+.flex-inline {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+/* ---------- FLAGS ---------- */
+
+.fi {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+}
+
+.fi::before {
+    width: 1.3em;
+    height: 1.3em;
+}
+
+.space {
+    margin-left: 5px;
+}
+
+/* ---------- ICONS ---------- */
+
+img {
+    width: 1.3em;
+    height: 1.3em;
+}
+
+#nowPlaying > a > img{
+    border-radius: 100%;
+    max-width: 24pt;
+    max-height: 24pt;
+    aspect-ratio: 1/1;
+}
+
+#nowPlaying > a {
+    color: var(--pinkdark3)
+}
+
+#nowPlaying {
+    font-size: 24pt;
+    border: 5px solid var(--transblue);
+    display: grid;
+    align-content: space-between;
+}
